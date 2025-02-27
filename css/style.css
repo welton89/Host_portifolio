@@ -322,32 +322,26 @@ body {
 .section .stats .stat p {
     color: #a0aec0;
 }
-.projects {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
 
 
 .flip-horizontal-left:hover .flip-card-inner {
     transform: rotateY(-180deg);
-    transition: all 0.5s ease-in-out;
+    transition: all 0.8s ease-out;
 }
 
 .flip-horizontal-left .flip-card-back {
     transform: rotateY(-180deg);
-    transition: all 0.5s ease-in-out;
-
+    transition: all 0.8s ease-in-out;
+    
 }
 .flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 1.5s;
+    transition: transform 0.8s;
     transform-style: preserve-3d;
 }
-  
+
 /* Position the front and back side */
 .flip-card-front, 
 .flip-card-back {
@@ -362,18 +356,28 @@ body {
     height: 100%;
     border-radius: 25px;
     object-fit: cover;
-} */
-
-
-@media (max-width: 768px) {
+    } */
+    
     .projects {
-        display: flex;
-        flex-direction: column;
-            /* grid-template-columns: 3fr; */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+        grid-template-rows: auto;
+    }
+
+    @media (max-width: 768px) {
+    .projects {
+        display: grid;
+            grid-template-columns: 1fr;
         }
-}
+    }
+
+
+
+
 .projects .project {
-    height: 94%;
+    min-height: 94%;
     background-color: var(--base-logo);
     padding: 0.8rem;
     border-radius: 0.5rem;

@@ -93,6 +93,13 @@ body {
 }
 .background .bg1 {
     background-color:var(--bg1);
+    max-height: 20.5%;
+}
+@media screen and (max-width: 768px) {
+    .background .bg1 {
+        max-height: 18.8%;
+    }
+    
 }
 .background .bg2 {
     background-color: var(--bg2);

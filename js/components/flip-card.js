@@ -1,4 +1,4 @@
-// flip-card.js
+
 
 const template = document.createElement('template');
 template.innerHTML = `
@@ -10,7 +10,6 @@ template.innerHTML = `
       margin-top: 60px;
       transform: translateZ(0);
       perspective: 800px;
-      
     }
 
     .flip-card-inner {
@@ -20,12 +19,18 @@ template.innerHTML = `
       transition: transform 0.8s;
       transform-style: preserve-3d;
     }
+
     .flip-horizontal-left .flip-card-inner {
         transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-    .flip-horizontal-left:hover .flip-card-inner {
+
+    /* Removendo o efeito de hover */
+    /* .flip-horizontal-left:hover .flip-card-inner {
         transform: rotateY(-180deg);
-        
+    } */
+
+    .flip-horizontal-left.flipped .flip-card-inner { /* Nova classe para o estado virado */
+        transform: rotateY(-180deg);
     }
 
     .flip-horizontal-left .flip-card-back {
@@ -64,8 +69,24 @@ template.innerHTML = `
     .project p {
         color: #a0aec0;
     }
-  </style>
 
+    .project a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        margin-top: 1rem;
+        color: var(--color-secundary);
+    }
+        .more {
+              cursor: pointer; /* Adicionando cursor pointer para indicar clicabilidade */
+
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+        }
+  </style>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 
   <div class="flip-card flip-horizontal-left">
     <div class="flip-card-inner">
@@ -74,12 +95,21 @@ template.innerHTML = `
           <img id="front-image" alt="">
           <h3 id="front-title"></h3>
           <p id="front-description"></p>
+
+          <div class="more">
+            <a>Ver mais<i style="margin-left: 5px;" class="fas fa-arrow-right"></i></a>
+          </div>
         </div>
       </div>
       <div class="flip-card-back">
         <div class="project">
           <h3 id="back-title"></h3>
           <p id="back-description"></p>
+          <div style="max-width: 80px;" id="github-link" >
+          </div>
+          <div class="more">
+            <a><i style="margin-right: 5px;" class="fas fa-arrow-left"></i>Voltar</a>
+          </div>
         </div>
       </div>
     </div>
@@ -100,6 +130,10 @@ class FlipCard extends HTMLElement {
 
     this.shadowRoot.querySelector('#back-title').textContent = this.getAttribute('back-title');
     this.shadowRoot.querySelector('#back-description').textContent = this.getAttribute('back-description');
+    this.shadowRoot.querySelector('#github-link').href = this.getAttribute('github-link');
+
+    this.card = this.shadowRoot.querySelector('.flip-card'); // Selecionando o card no construtor
+    this.card.addEventListener('click', () => this.flip()); // Adicionando o event listener para o clique
   }
 
   connectedCallback() {
@@ -107,7 +141,14 @@ class FlipCard extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['front-image','front-image-alt', 'front-title', 'front-description', 'back-title', 'back-description'];
+    return ['front-image',
+        'front-image-alt', 
+        'front-title', 
+        'front-description',
+         'back-title', 
+         'back-description',
+         'github-link',
+        ];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -131,6 +172,13 @@ class FlipCard extends HTMLElement {
     if (name === 'back-description') {
         this.shadowRoot.querySelector('#back-description').textContent = newValue;
     }
+    if (name === 'github-link') {
+        this.shadowRoot.querySelector('#github-link').innerHTML ='<a id="github-link" href="' + newValue + '" target="_blank"><i  style="margin-right: 5px;" class="fab fa-github"></i> GitHub</a>';
+    }
+  }
+
+  flip() {
+    this.card.classList.toggle('flipped');
   }
 }
 

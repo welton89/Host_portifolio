@@ -327,7 +327,7 @@ body {
 }
 
 
-.flip-horizontal-left:hover .flip-card-inner {
+.flip-horizontal-left::before .flip-card-inner {
     transform: rotateY(-180deg);
     /* transition: all 0.8s ease-out; */
     transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -390,7 +390,7 @@ body {
 
 
 .projects .project {
-    min-height: 94%;
+    /* min-height: 94%; */
     background-color: var(--base-logo);
     padding: 0.8rem;
     border-radius: 0.5rem;
@@ -433,7 +433,7 @@ body {
     align-items: center;
 }
 .services .service .icon i {
-    color: #fbbf24;
+    color: var(--color-secundary);
     font-size: 2rem;
 }
 .services .service .icon h3 {
@@ -446,7 +446,7 @@ body {
     margin-top: 1rem;
 }
 .services .service a {
-    color: #fbbf24;
+    color: var(--color-secundary);
     text-decoration: none;
     display: inline-block;
     margin-top: 1rem;

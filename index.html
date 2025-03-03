@@ -12,29 +12,49 @@
     </style>
 </head>
 <body>
+    
     <div class="main">
-        <div class="background">
-            <div class="bg1"></div>
-            <div class="bg2"></div>
-            <div class="bg3"></div>
-        </div>
-        <div class="content">
-            <header class="header">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-user-circle"></i>
+                <span>Hello World</span>
+            </div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Portfolio</a>
+                <a href="#projects">Projetos</a>
+                <a href="#contacts">Contato</a>
+            </nav>
+           
+        </header>
+
+        
+            <div class="header-mobile">
                 <div class="logo">
                     <i class="fas fa-user-circle"></i>
                     <span>Hello World</span>
                 </div>
-                <nav>
+                <button class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav id="nav-links" class="nav-links">
                     <a href="#">Home</a>
                     <a href="#">Portfolio</a>
-                    <a href="#">Projetos</a>
-                    <a href="#">Contato</a>
+                    <a href="#projects">Projetos</a>
+                    <a href="#contacts">Contato</a>
                 </nav>
-                <div class="social">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </header>
+            </div>
+            
+
+
+        <div class="background">
+            <div class="bg1"></div>
+            <div class="bg2"></div>
+            <div class="bg3"></div>
+            <div class="bg4"></div>
+        </div>
+        <div class="content">
+
 
 
             <section class="section">
@@ -42,13 +62,21 @@
 
                 <div id="intro-1" class="intro">
                     <h1>Olá! Sou  <span>Welton Moura,</span></h1>
-                    <p>um desenvolvedor full stack apaixonado por transformar ideias em soluções digitais. Com quase 3 anos de experiência, tenho me dedicado a resolver problemas complexos através da tecnologia, criando aplicações web, mobile, e automações completas e eficientes.</p>
+                    <p>
+                        um desenvolvedor full stack apaixonado por transformar 
+                        ideias em soluções digitais. Com quase 3 anos de experiência, 
+                        encontrando soluções para problemas complexos através das principais 
+                        tecnologias disponiveis no mercado, 
+                        criando aplicações e automações eficientes e confiáveis.
+                    </p>
                 </div>
 
                 <div id="intro-2"  class="intro">
                     <div class="circle">
                         <div style="align-self: center;">
-                            <img style="filter: drop-shadow(-5px -5px 4.5px rgba(8, 8, 8, 0.616));" alt="photo Welton Moura"   src="assets/img/perfil.png">
+                            <img style="filter: drop-shadow(-5px -5px 4.5px rgba(8, 8, 8, 0.616));"
+                                alt="photo Welton Moura" 
+                                src="assets/img/perfil.png">
                         </div>
                     </div>
                 </div>
@@ -56,7 +84,23 @@
                 <div id="intro-3"  class="intro">
                     <div>
                         <h2 >E mais...</h2>
-                        <p >Possuo experiencia na estruturação de dados, extração e tratamento de dados de diversas fontes (APIs, planilhas google, database SQL, BigQuery, arquivos CSV) o que me permite criar soluções completas e eficientes. Minha experiencia também se estende à automação no sistema Google Workspace utilizando AppScript, criando documentos personalizados e enviando e-mails automaticos. No entanto, minha maior habilidade reside na minha capacidade de aprendizado rápido, permitindo-me dominar novas tecnologias com agilidade e eficiência.
+                        <p >
+
+                            Estou sempre atualizado com as últimas tendências e ferramentas do mercado.
+                             Minha busca por conhecimento é constante, assim como minha sede por desafios.
+                              O aprendizado rápido é uma de minhas maiores habilidades,
+                               permitindo-me adaptar a novas linguagens e frameworks com agilidade e eficiência. 
+                               <!-- Se você busca um profissional proativo e que entrega resultados, entre em contato! -->
+
+                            <!-- Possuo experiencia na estruturação, extração e 
+                            tratamento de dados de diversas fontes (APIs, planilhas google,
+                             database SQL, BigQuery, arquivos CSV) o que me permite
+                              criar soluções completas e eficientes. Minha experiencia também 
+                              se estende à automação no sistema Google Workspace utilizando
+                               AppScript, criando documentos personalizados e enviando e-mails
+                                automaticos. No entanto, minha maior habilidade reside na minha 
+                                capacidade de aprendizado rápido, permitindo-me dominar novas 
+                                tecnologias com agilidade e eficiência. -->
                         </p>
                        
                     </div>
@@ -83,7 +127,16 @@
 
             <section class="section">
                 <h2>O que posso fazer para atender às suas necessidades</h2>
-                <p>É mais fácil confiar no trabalho de especialistas porque eles são capazes de fornecer os melhores resultados com qualidade confiável.</p>
+                <p>
+                    Possuo experiencia na estruturação de dados, extração e 
+                            tratamento de dados de diversas fontes (APIs, planilhas google,
+                             database SQL, BigQuery, arquivos CSV) o que me permite
+                              criar soluções completas e eficientes. Minha experiencia também 
+                              se estende à automação no sistema Google Workspace utilizando
+                               AppScript, criando documentos personalizados e enviando e-mails
+                                automaticos. No entanto, minha maior habilidade reside na minha 
+                                capacidade de aprendizado rápido, permitindo-me dominar novas 
+                                tecnologias com agilidade e eficiência.</p>
                 <div class="stats">
                     <div class="stat">
                         <h3>20+</h3>
@@ -106,6 +159,7 @@
 
 
             <section class="section">
+                <h2 id="projects">Alguns dos meus projetos</h2>
 
                 <div class="projects">
                                         
@@ -204,14 +258,22 @@
                     </div>
                 </div>
             </section>
-            <footer>
-                <h2>
-                    contato aqui
-                </h2>
+            <footer id="contacts" class="contact">
+                <div class="social">
+                    <a target="_blank" href="https://br.linkedin.com/in/welton-moura-23a897230"><i class="fab fa-linkedin"></i></a>
+                    <a target="_blank" href="https://github.com/welton89"><i class="fab fa-github"></i></a>
+                    <a href="weltonmoura@live.com"><i class="fas fa-envelope"></i></a>
+                    <a target="_blank" href="#"><i class="fab fa-discord"></i></a>
+                    <a target="_blank" href="#"><i class="fab fa-telegram"></i></a>
+                    <!-- <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a> -->
+                    <!-- <a href="#"><i class="fas fa-map-marker-alt"></i></a> -->
+                </div>
             </footer>
         </div>
     </div>
     <script src="js/components/flip-card.js" defer></script>
+    <script src="js/script.js" ></script>
 
 </body>
 </html>

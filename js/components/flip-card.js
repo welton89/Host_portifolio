@@ -7,7 +7,7 @@ template.innerHTML = `
       background-color: transparent;
       width: 100%;
       height: 430px;
-      margin-top: 60px;
+      margin-top: 10px;
       transform: translateZ(0);
       perspective: 800px;
     }
@@ -24,10 +24,6 @@ template.innerHTML = `
         transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
-    /* Removendo o efeito de hover */
-    /* .flip-horizontal-left:hover .flip-card-inner {
-        transform: rotateY(-180deg);
-    } */
 
     .flip-horizontal-left.flipped .flip-card-inner { /* Nova classe para o estado virado */
         transform: rotateY(-180deg);

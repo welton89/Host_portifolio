@@ -14,7 +14,6 @@ html, body {
 }
 
 .image{
-    --animate-delay: 0.9s;
     animation-name: fadeIn;
     animation-duration: 1s;
     animation-delay: 1.3s;
@@ -45,6 +44,7 @@ body {
     max-width: 1252px;
     background-color:var(--bg1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation-delay: 1.4s;
 }
 
 
@@ -88,6 +88,7 @@ body {
     top: 0;
     width: 100%;
     z-index: 9999; 
+    animation-delay: 1.4s;
 }
 
 .header-mobile .logo {
@@ -270,12 +271,14 @@ body {
 
 #intro-1{
     order: 1;
+    animation-duration: 1.5s;
 }
 #intro-2{
     order: 2;
 }
 #intro-3{
     order: 3;
+    animation-duration: 1.5s;
 }
 @media screen and (max-width: 768px) {
     #intro-1{
@@ -315,7 +318,6 @@ body {
 }
 
 .circle img {
-    /* scale: 1.33; */
     width: 230px;
     height: 290px;
     filter: grayscale(55%);
@@ -375,6 +377,9 @@ body {
         gap: 0.5rem;
         height: 200px;
         margin: 50px 0px 0px 0px;
+    }
+    #section-1{
+        padding-top: 0;
     }
     
 }
@@ -446,8 +451,6 @@ body {
             grid-template-columns: 1fr;
         }
 }
-
-
 
 
 .projects .project {

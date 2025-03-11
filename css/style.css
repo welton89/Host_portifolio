@@ -7,10 +7,19 @@
     --base-logo: #403f4e;
     --circle: #2d2d39;
     --color-secundary: #fbbf24;
+    --animate-delay: 0.5s;
   }
-  html, body {
+html, body {
     scroll-behavior: smooth;
 }
+
+.image{
+    --animate-delay: 0.9s;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 1.3s;
+}
+
 body {
     justify-self: center;
     font-family: 'Roboto', sans-serif;
@@ -300,6 +309,9 @@ body {
     margin-bottom: 50px;
     margin: auto;
     z-index: 0;
+    /* animation-name: fadeIn; */
+    animation-duration: 1.5s;
+    /* animation-delay: 2s; */
 }
 
 .circle img {
@@ -337,7 +349,8 @@ body {
 }
 .section {
     display: relative;
-    margin-top: 1rem;
+    padding-top: 60px;
+    /* margin-top: 1rem; */
     
 }
 

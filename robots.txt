@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /raulrockbar/
+Sitemap: https://weltonmoura.com.br/sitemap.xml

@@ -409,6 +409,7 @@ body {
 .section .stats {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     /* margin-top: 1.5rem; */
 }
 .section .stats .stat {
@@ -419,12 +420,19 @@ body {
     justify-content: center;
     border-radius: 8px;
     /* line-height: 10px; */
-    /* gap: -0.5rem; */
     margin: 20px;
-    padding: 0.5rem;
+    padding: 1rem;
     text-align: center;
     background-color: var(--base-logo);
     box-shadow:  0px 0px 25px rgba(43, 43, 43, 0.521);
+}
+
+@media (max-width: 768px) {
+    .section .stats {  
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        grid-template-rows: auto auto; 
+    }
 }
 .section .stats .stat h3 {
     color: var(--color-secundary);

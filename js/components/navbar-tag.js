@@ -39,6 +39,7 @@ class NavbarTag extends HTMLElement {
                     <a href="/">Home</a>
                     <a href="/portfolio">Portfólio</a>
                     <a href="/projects">Projetos</a>
+                    <a href="/lab/blog">Blog</a>
                     <a href="/lab">Laboratório</a>
                     <a href="#contacts">Contato</a>
                 </nav>
@@ -56,6 +57,7 @@ class NavbarTag extends HTMLElement {
                     <a href="/">Home</a>
                     <a href="/portfolio">Portfólio</a>
                     <a href="/projects">Projetos</a>
+                    <a href="/lab/blog">Blog</a>
                     <a href="/lab">Laboratório</a>
                     <a href="#contacts">Contato</a>
                 </nav>

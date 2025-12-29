@@ -1,0 +1,56 @@
+.logos {
+    display: flex;
+    position: relative;
+    height: 7%;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--base-logo);
+    padding: 0.8rem;
+    border-radius: 5px;
+    margin: 1rem 8rem 0 8rem;
+    z-index: 10;
+}
+
+.backLogo {
+    background-color: var(--bg1);
+    border-radius: 5px;
+    
+    transition: all 0.3s ease-in-out;
+}
+
+.backLogo:hover {
+    scale: 1.1;
+    transition: all 0.3s ease-in-out;
+}
+
+.logos img {
+    height: 45px;
+    width: 110px;
+    padding: 5px;
+    filter: drop-shadow(0px 0px 0.3px rgba(0, 0, 0, 0.562)) grayscale(100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.logos img:hover {
+    filter: grayscale(0%);
+    transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    .logos {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        height: 150px;
+        margin: 10px 0px 0px 0px;
+    }
+
+    .logos img {
+    height: 55px;
+    width: 130px;
+    padding: 10px;
+    filter: drop-shadow(0px 0px 0.3px rgba(0, 0, 0, 0.562)) grayscale(100%);
+    transition: all 0.3s ease-in-out;
+}
+}

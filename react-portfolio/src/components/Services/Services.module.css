@@ -1,0 +1,46 @@
+.section {
+    padding: 1.5rem;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.service {
+    width: 93%;
+    gap: 1.5rem;
+    background-color: var(--base-logo);
+    box-shadow: 0px 0px 25px rgba(43, 43, 43, 0.521);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.service .icon {
+    display: flex;
+    align-items: center;
+}
+
+.service .icon i {
+    color: var(--color-secundary);
+    font-size: 2rem;
+}
+
+.service .icon h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+
+.service p {
+    color: #a0aec0;
+    margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    .services {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

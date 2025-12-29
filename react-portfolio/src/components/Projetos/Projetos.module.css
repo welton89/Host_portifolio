@@ -1,0 +1,27 @@
+.section {
+    padding: 1.5rem;
+    padding-top: 60px;
+}
+
+.section h2 {
+    margin: 0;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .projects {
+        justify-content: center;
+        display: flex;
+        grid-template-columns: 1fr;
+    }
+}

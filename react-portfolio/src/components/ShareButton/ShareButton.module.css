@@ -1,0 +1,121 @@
+.shareContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.shareButton {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-secundary);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.shareButton:hover {
+    background: var(--color-secundary);
+    color: var(--bg1);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.3);
+}
+
+.shareMenu {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    margin-left: 100px;
+    background: rgba(26, 26, 34, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 0.6rem;
+    width: auto;
+    min-width: fit-content;
+    z-index: 100;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menuHeader {
+    display: none;
+}
+
+.linksGrid {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    padding: 2px;
+    flex-wrap: nowrap;
+}
+
+.linksGrid::-webkit-scrollbar {
+    height: 3px;
+}
+
+.linksGrid::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.shareLink,
+.copyButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    text-decoration: none;
+    color: #e2e8f0;
+    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.shareLink:hover,
+.copyButton:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+.shareLink i,
+.copyButton i {
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.copyButton i {
+    color: #a0aec0;
+}
+
+.copyButton i.fa-check {
+    color: #48bb78;
+}
+
+/* Ajuste para quando o menu estiver no topo da página */
+.shareMenu.top {
+    bottom: auto;
+    top: calc(100% + 10px);
+}

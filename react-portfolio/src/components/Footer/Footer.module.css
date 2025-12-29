@@ -1,0 +1,47 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.contactTitle {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.contact .social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.icons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.contact .social a {
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 28px;
+    transition: all 0.3s;
+}
+
+.contact .social a:hover {
+    color: var(--color-secundary, #fbbf24);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    color: #718096;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+

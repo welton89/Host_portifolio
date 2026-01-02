@@ -61,7 +61,6 @@ const Blog = () => {
                                         )}
                                         <div className={styles.postContent}>
                                             <div className={styles.meta}>
-                                                <span className={styles.date}>{formatDate(post.date)}</span>
                                                 {post.tags && (
                                                     <div className={styles.tags}>
                                                         {post.tags.split(',').map((tag, i) => (
@@ -78,9 +77,14 @@ const Blog = () => {
                                             </div>
                                             <h2>{post.title}</h2>
                                             <p>{post.summary}</p>
+
+                                            <div style={{display:'flex',justifyContent:'space-between'}}>
+                                              <span className={styles.date}>{formatDate(post.date)}</span>
                                             <Link to={`/blog/${post.id}`} className={styles.readMore}>
                                                 Ler mais <i className="fas fa-arrow-right"></i>
                                             </Link>
+
+                                            </div>
                                         </div>
                                     </article>
                                 ))

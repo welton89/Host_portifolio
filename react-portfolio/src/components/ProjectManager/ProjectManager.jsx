@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useProjects } from '../../hooks/useProjects';
 import { compressImage } from '../../utils/imageUtils';
-import { parseToISODate, parseToTimestamp } from '../../utils/dateUtils';
+import { parseToISODate, parseToTimestamp, formatDate } from '../../utils/dateUtils';
 import ConfirmModal from '../ConfirmModal/ConfirmModal';
 import styles from './ProjectManager.module.css';
 
@@ -213,6 +213,7 @@ const ProjectManager = () => {
                                 <div className={styles.cardInfo}>
                                     <h4>{project.title}</h4>
                                     <p>{project.subtitle}</p>
+                                    <p>{formatDate(project.date)}</p>
                                 </div>
                                 <div className={styles.cardActions}>
                                     <button onClick={() => handleEdit(project)} className={styles.editButton}>

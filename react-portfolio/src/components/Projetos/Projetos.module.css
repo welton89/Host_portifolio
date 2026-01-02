@@ -18,10 +18,13 @@
     margin-top: 1.5rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 575px) {
     .projects {
         justify-content: center;
-        display: flex;
+        width: 275px;
+        max-width:110%;
+        margin: 0px;
         grid-template-columns: 1fr;
     }
+
 }

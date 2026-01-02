@@ -6,6 +6,7 @@ import gun, { MASTER_PUB_KEY, user } from '../../lib/gun';
 import { compressImage } from '../../utils/imageUtils';
 import ProjectManager from '../../components/ProjectManager/ProjectManager';
 import BlogManager from '../../components/BlogManager/BlogManager';
+import MetricsDashboard from '../../components/MetricsDashboard/MetricsDashboard';
 
 const Admin = () => {
     const navigate = useNavigate();
@@ -85,7 +86,7 @@ const Admin = () => {
         }
     };
 
-    const [activeSection, setActiveSection] = useState('config'); // 'config', 'projects', 'blog'
+    const [activeSection, setActiveSection] = useState('metrics'); // 'metrics', 'config', 'projects', 'blog'
 
     const toggleSection = (section) => {
         setActiveSection(activeSection === section ? null : section);
@@ -110,19 +111,18 @@ const Admin = () => {
             </header>
 
             <main className={styles.mainContent}>
-                <section className={styles.statsGrid}>
-                    <div className={styles.statCard}>
-                        <h3>Projetos</h3>
-                        <p className={styles.statValue}>4</p>
+
+                {/* Seção de Métricas */}
+                <section className={`${styles.accordionSection} ${activeSection === 'metrics' ? styles.active : ''}`}>
+                    <div className={styles.accordionHeader} onClick={() => toggleSection('metrics')}>
+                        <h2><i className="fas fa-chart-line"></i> Métricas de Acesso</h2>
+                        <i className={`fas fa-chevron-${activeSection === 'metrics' ? 'up' : 'down'}`}></i>
                     </div>
-                    <div className={styles.statCard}>
-                        <h3>Experiências</h3>
-                        <p className={styles.statValue}>3</p>
-                    </div>
-                    <div className={styles.statCard}>
-                        <h3>Contatos</h3>
-                        <p className={styles.statValue}>12</p>
-                    </div>
+                    {activeSection === 'metrics' && (
+                        <div className={styles.accordionContent}>
+                            <MetricsDashboard />
+                        </div>
+                    )}
                 </section>
 
                 {/* Seção de Configurações */}
@@ -248,13 +248,6 @@ const Admin = () => {
                     )}
                 </section>
 
-                <section className={styles.actions}>
-                    <h2>Gerenciamento Rápido</h2>
-                    <div className={styles.buttonGroup}>
-                        <button className={styles.actionButton}>Editar Experiências</button>
-                        <button className={styles.actionButton}>Ver Mensagens</button>
-                    </div>
-                </section>
             </main>
 
             <footer className={styles.footer}>

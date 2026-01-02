@@ -29,13 +29,13 @@ const ShareButton = ({ title, url }) => {
             url: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`,
             color: '#1DA1F2'
         },
-        {
-            name: 'Instagram',
-            icon: 'fab fa-instagram',
-            url: '#', // Instagram não tem share URL via web
-            color: '#E4405F',
-            isCopy: true
-        },
+        // {
+        //     name: 'Instagram',
+        //     icon: 'fab fa-instagram',
+        //     url: '#', // Instagram não tem share URL via web
+        //     color: '#E4405F',
+        //     isCopy: true
+        // },
         {
             name: 'Facebook',
             icon: 'fab fa-facebook-f',

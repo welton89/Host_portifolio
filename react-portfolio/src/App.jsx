@@ -5,10 +5,17 @@ import Login from './pages/Login/Login';
 import Blog from './pages/Blog/Blog';
 import BlogPost from './pages/BlogPost/BlogPost';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import useMetrics from './hooks/useMetrics';
 
-function App() {
+const MetricsTracker = () => {
+  useMetrics();
+  return null;
+};
+
+const App = () => {
   return (
     <Router>
+      <MetricsTracker />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />

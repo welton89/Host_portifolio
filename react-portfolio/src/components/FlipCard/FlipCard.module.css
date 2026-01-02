@@ -26,6 +26,13 @@
     transform-style: preserve-3d;
 }
 
+@media screen and (max-width: 575px) {
+    .flipCardInner {
+        width: 107%;
+        max-width: 550px;
+    }
+}
+
 .flipCardInner.flipped {
     transform: rotateY(180deg);
 }

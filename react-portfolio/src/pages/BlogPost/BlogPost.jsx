@@ -12,7 +12,6 @@ import remarkGfm from 'remark-gfm';
 import remarkBreaks from 'remark-breaks';
 import { formatDate } from '../../utils/dateUtils';
 import ShareButton from '../../components/ShareButton/ShareButton';
-
 const BlogPost = () => {
     const { id } = useParams();
     const { posts, loading } = useBlog();
@@ -28,7 +27,6 @@ const BlogPost = () => {
             return prev;
         });
     };
-
     // Extrai títulos para o sumário
     const toc = useMemo(() => {
         if (!post?.content) return [];
@@ -42,6 +40,13 @@ const BlogPost = () => {
             matches.push({ level, text, slug });
         }
         return matches;
+    }, [post?.content]);
+    // Pré-processa o conteúdo para evitar que tabs/4 espaços no início da linha virem blocos de código
+    const processedContent = useMemo(() => {
+        if (!post?.content) return '';
+        return post.content
+            .replace(/^(\t+)/gm, (match) => '&nbsp;&nbsp;&nbsp;&nbsp;'.repeat(match.length))
+            .replace(/^( {4,})/gm, (match) => '&nbsp;'.repeat(match.length));
     }, [post?.content]);
 
     // Componentes customizados para o ReactMarkdown injetar IDs
@@ -171,7 +176,7 @@ const BlogPost = () => {
                             rehypePlugins={[rehypeRaw]}
                             remarkPlugins={[remarkGfm, remarkBreaks]}
                         >
-                            {post.content}
+                            {processedContent}
                         </ReactMarkdown>
                     </div>
                 </article>

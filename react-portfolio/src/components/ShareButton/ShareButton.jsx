@@ -6,7 +6,10 @@ const ShareButton = ({ title, url }) => {
     const [copied, setCopied] = useState(false);
     const menuRef = useRef(null);
 
-    const fullUrl = url.startsWith('http') ? url : `${window.location.origin}${url}`;
+    const fullUrl = url.startsWith('http')
+        ? url
+        : `${window.location.origin}${window.location.pathname}#${url}`;
+
     const encodedUrl = encodeURIComponent(fullUrl);
     const encodedTitle = encodeURIComponent(title);
 

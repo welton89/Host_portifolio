@@ -4,7 +4,7 @@ import 'gun/sea';
 // Inicializa o Gun. 
 // Desativamos o multicast/local peer search para evitar erros de conexão no console se não houver relay local.
 const gun = Gun({
-    peers: ['https://gunjs-chat.squareweb.app/gun'],
+    peers: ['https://gun.defucc.me/gun', 'https://gun.o8.is/gun','gunjs-chat.squareweb.app/gun'],
     localStorage: true,
     radisk: true
 });
